@@ -12,11 +12,11 @@ import retrofit.mime.TypedFile;
 public interface UploadService {
 
 
-//  @Headers({"Content-Type: application/octet-stream"})
-//  @Multipart @POST("/")
-//  Response uploadImage(@Part("image") TypedFile image);
+//  @Headers({"Content-Type: multipart/form-data; boundary=***"})
+  @Multipart @POST("/upload")
+  Response uploadImage(@Part("image") TypedFile image);
 
-  @Headers({"Content-Type: application/octet-stream"})
-  @FormUrlEncoded @POST("/")
-  Response uploadImage(@Field("fileUpload") TypedFile image);
+//  @Headers({"Content-Type: multipart/form-data; boundary=***"})
+//  @FormUrlEncoded @POST("/upload/")
+//  Response uploadImage(@Field("fileUpload") TypedFile image);
 }
